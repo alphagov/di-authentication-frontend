@@ -64,6 +64,9 @@ var cookies = function (trackingId, analyticsCookieDomain) {
 
   function cookiesPageInit() {
     document.querySelector("#cookie-preferences-form").hidden = false;
+    document.querySelector("#go-back-link").onclick = function() {
+      window.history.go(document.querySelector('input[name="backCount"]').value);
+    };
   }
 
   function hasConsentForAnalytics() {
